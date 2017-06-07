@@ -1,15 +1,17 @@
 ﻿using FinalProject.DomainData;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
-namespace FinalProject.DomainService
+namespace FinalProject.DomainRepository
 {
-    public class FavoriteService : IFavoriteService
+    public class FavoriteRepository : IFavoriteRepository
     {
         private readonly FinalProjectContext _context;
 
-        public FavoriteService(FinalProjectContext context)
+        public FavoriteRepository(FinalProjectContext context)
         {
             _context = context;
         }

@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
 export class Movie {
-    constructor(public ID: number, public Title: string, public Rating: number, public Viewed: number, public Released: Date, public Url: string, public BackgroundUrl: string) { }
+    constructor(public Id: number, public CreatedDate: Date, public ModifiedDate: Date, public IsDeleted: boolean, public Title: string, public Description: string, public Viewed: number, public Released: Date, public ThumbnailUrl: string, public BackgroundUrl: string, public Category: number) { }
 }
 
 @Injectable()

@@ -1,15 +1,17 @@
 ﻿using FinalProject.DomainData;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
-namespace FinalProject.DomainService
+namespace FinalProject.DomainRepository
 {
-    public class ReviewService : IReviewService
+    public class ReviewRepository : IReviewRepository
     {
         private readonly FinalProjectContext _context;
 
-        public ReviewService(FinalProjectContext context)
+        public ReviewRepository(FinalProjectContext context)
         {
             _context = context;
         }

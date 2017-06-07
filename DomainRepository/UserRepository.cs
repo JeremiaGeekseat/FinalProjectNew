@@ -1,15 +1,17 @@
-﻿using FinalProject.DomainData;
-using Microsoft.EntityFrameworkCore;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using FinalProject.DomainData;
+using Microsoft.EntityFrameworkCore;
 
-namespace FinalProject.DomainService
+namespace FinalProject.DomainRepository
 {
-    public class UserService : IUserService
+    public class UserRepository : IUserRepository
     {
         private readonly FinalProjectContext _context;
 
-        public UserService(FinalProjectContext context)
+        public UserRepository(FinalProjectContext context)
         {
             _context = context;
         }

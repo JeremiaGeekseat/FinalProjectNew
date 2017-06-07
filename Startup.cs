@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using FinalProject.DomainData;
 using FinalProject.Migrations;
+using FinalProject.DomainService;
+using FinalProject.DomainRepository;
 
 namespace FinalProject
 {
@@ -35,6 +37,7 @@ namespace FinalProject
             services.AddMvc();
 
             services.AddDbContext<FinalProjectContext>(options => options.UseSqlServer(Configuration.GetConnectionString("FinalProjectContext")));
+            services.AddScoped<IMovieRepository, MovieRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,15 +1,17 @@
 ﻿using FinalProject.DomainData;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
-namespace FinalProject.DomainService
+namespace FinalProject.DomainRepository
 {
-    public class CategoryService : ICategoryService
+    public class CategoryRepository : ICategoryRepository
     {
         private readonly FinalProjectContext _context;
 
-        public CategoryService(FinalProjectContext context)
+        public CategoryRepository(FinalProjectContext context)
         {
             _context = context;
         }
