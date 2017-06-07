@@ -8,5 +8,6 @@ namespace FinalProject.DomainRepository
 {
     public interface IMovieRepository : IRepository<Movie>
     {
+        Task<Rate> GetRate(int id);
     }
 }

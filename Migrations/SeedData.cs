@@ -239,7 +239,7 @@ namespace FinalProject.Migrations
                         IsDeleted = false,
                         Title = "Mike and Dave Need Wedding Dates",
                         Viewed = 0,
-                        Released = new DateTime(2016, 6, 30),
+                        Released = new DateTime(2016, 6, 11),
                         Description = "Mike and Dave Stangle are young, adventurous, fun-loving brothers who tend to get out of control at family gatherings. When their sister Jeanie reveals her Hawaiian wedding plans, the rest of the clan insists that they both bring respectable dates. After placing an ad on Craigslist, the siblings decide to pick Tatiana and Alice, two charming and seemingly normal women. Once they arrive on the island, however, Mike and Dave realize that their companions are ready to get wild and party hard.",
                         BackgroundUrl = "b7.jpg",
                         ThumbnailUrl = "c7.jpg",
@@ -320,11 +320,266 @@ namespace FinalProject.Migrations
                         Released = new DateTime(2016, 11, 12),
                         Description = "Foster parents Mark and Jessie welcome 8-year-old Cody into their home. The boy tells Jessie that he's terrified to fall asleep, but she assumes it's just a natural fear for any young child. The couple become startled when their dead biological son suddenly appears in their living room. To their surprise, Cody's dreams can magically become real but so can his nightmares. Mark and Jessie must now uncover the truth behind Cody's mysterious ability before his imagination harms them all.",
                         BackgroundUrl = "b13.jpg",
-                        ThumbnailUrl = "c13.jpg",
+                        ThumbnailUrl = "h1.jpg",
                         Category = new Category { Id = 2 }
                     }
                 );
                 
+                context.SaveChanges();
+
+                context.Reviews.AddRange(
+                    new Review
+                    {
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                        IsDeleted = false,
+                        UserId = 1,
+                        MovieId = 1,
+                        Rate = 5,
+                        Comment = "This is good"
+                    },
+                    new Review
+                    {
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                        IsDeleted = false,
+                        UserId = 1,
+                        MovieId = 2,
+                        Rate = 4,
+                        Comment = "This is good"
+                    },
+                    new Review
+                    {
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                        IsDeleted = false,
+                        UserId = 1,
+                        MovieId = 3,
+                        Rate = 5,
+                        Comment = "This is good"
+                    },
+                    new Review
+                    {
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                        IsDeleted = false,
+                        UserId = 1,
+                        MovieId = 4,
+                        Rate = 2,
+                        Comment = "This is good"
+                    },
+                    new Review
+                    {
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                        IsDeleted = false,
+                        UserId = 1,
+                        MovieId = 1,
+                        Rate = 5,
+                        Comment = "This is good"
+                    },
+                    new Review
+                    {
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                        IsDeleted = false,
+                        UserId = 1,
+                        MovieId = 5,
+                        Rate = 5,
+                        Comment = "This is good"
+                    },
+                    new Review
+                    {
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                        IsDeleted = false,
+                        UserId = 1,
+                        MovieId = 6,
+                        Rate = 5,
+                        Comment = "This is good"
+                    },
+                    new Review
+                    {
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                        IsDeleted = false,
+                        UserId = 1,
+                        MovieId = 7,
+                        Rate = 1,
+                        Comment = "This is good"
+                    },
+                    new Review
+                    {
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                        IsDeleted = false,
+                        UserId = 1,
+                        MovieId = 8,
+                        Rate = 5,
+                        Comment = "This is good"
+                    },
+                    new Review
+                    {
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                        IsDeleted = false,
+                        UserId = 1,
+                        MovieId = 9,
+                        Rate = 1,
+                        Comment = "This is good"
+                    },
+                    new Review
+                    {
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                        IsDeleted = false,
+                        UserId = 1,
+                        MovieId = 10,
+                        Rate = 5,
+                        Comment = "This is good"
+                    },
+                    new Review
+                    {
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                        IsDeleted = false,
+                        UserId = 1,
+                        MovieId = 11,
+                        Rate = 5,
+                        Comment = "This is good"
+                    },
+                    new Review
+                    {
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                        IsDeleted = false,
+                        UserId = 1,
+                        MovieId = 12,
+                        Rate = 5,
+                        Comment = "This is good"
+                    },
+                    new Review
+                    {
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                        IsDeleted = false,
+                        UserId = 2,
+                        MovieId = 1,
+                        Rate = 5,
+                        Comment = "This is good"
+                    },
+                    new Review
+                    {
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                        IsDeleted = false,
+                        UserId = 2,
+                        MovieId = 2,
+                        Rate = 5,
+                        Comment = "This is good"
+                    },
+                    new Review
+                    {
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                        IsDeleted = false,
+                        UserId = 2,
+                        MovieId = 3,
+                        Rate = 5,
+                        Comment = "This is good"
+                    },
+                    new Review
+                    {
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                        IsDeleted = false,
+                        UserId = 2,
+                        MovieId = 4,
+                        Rate = 5,
+                        Comment = "This is good"
+                    },
+                    new Review
+                    {
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                        IsDeleted = false,
+                        UserId = 2,
+                        MovieId = 5,
+                        Rate = 5,
+                        Comment = "This is good"
+                    },
+                    new Review
+                    {
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                        IsDeleted = false,
+                        UserId = 2,
+                        MovieId = 6,
+                        Rate = 5,
+                        Comment = "This is good"
+                    },
+                    new Review
+                    {
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                        IsDeleted = false,
+                        UserId = 2,
+                        MovieId = 7,
+                        Rate = 5,
+                        Comment = "This is good"
+                    },
+                    new Review
+                    {
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                        IsDeleted = false,
+                        UserId = 2,
+                        MovieId = 8,
+                        Rate = 5,
+                        Comment = "This is good"
+                    },
+                    new Review
+                    {
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                        IsDeleted = false,
+                        UserId = 2,
+                        MovieId = 9,
+                        Rate = 5,
+                        Comment = "This is good"
+                    },
+                    new Review
+                    {
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                        IsDeleted = false,
+                        UserId = 2,
+                        MovieId = 10,
+                        Rate = 5,
+                        Comment = "This is good"
+                    },
+                    new Review
+                    {
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                        IsDeleted = false,
+                        UserId = 2,
+                        MovieId = 11,
+                        Rate = 3,
+                        Comment = "This is good"
+                    },
+                    new Review
+                    {
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now,
+                        IsDeleted = false,
+                        UserId = 2,
+                        MovieId = 12,
+                        Rate = 5,
+                        Comment = "This is good"
+                    }
+                );
+
                 context.SaveChanges();
             }
         }

@@ -11,4 +11,3 @@ namespace FinalProject.DomainRepository
         Task<User> GetUserByEmail(string email);
     }
 }
-}

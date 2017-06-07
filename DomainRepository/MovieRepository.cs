@@ -33,6 +33,11 @@ namespace FinalProject.DomainRepository
             return await _context.Movies.ToListAsync();
         }
 
+        public async Task<Rate> GetRate(int id)
+        {
+            return new Rate { Id = id, Rating = await _context.Reviews.Where(r => r.MovieId == id).AverageAsync(r => r.Rate) };
+        }
+
         public async void Insert(Movie entity)
         {
             _context.Add(entity);
