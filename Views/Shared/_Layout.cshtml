@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApplicationBasic</title>
+    <base href="/" />
+    <link rel="stylesheet" href="~/dist/vendor.css" asp-append-version="true" />
+    @* custom *@
+    <link rel="stylesheet" href="~/dist/css/contactstyle.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/dist/css/faqstyle.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/dist/css/flexslider.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/dist/css/font-awesome.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/dist/css/jquery.slidey.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/dist/css/medile.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/dist/css/news.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/dist/css/owl.carousel.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/dist/css/popuo-box.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/dist/css/single.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/dist/css/style.css" asp-append-version="true" />
+
+</head>
+<body>
+    @RenderBody()
+
+    @* custom *@
+    <script src="~/dist/js/jquery-2.1.4.min.js" asp-append-version="true"></script>
+    <script src="~/dist/js/bootstrap.min.js" asp-append-version="true"></script>
+    <script src="~/dist/js/easing.js" asp-append-version="true"></script>
+    <script src="~/dist/js/jquery.dotdotdot.min.js" asp-append-version="true"></script>
+    <script src="~/dist/js/jquery.flexslider.js" asp-append-version="true"></script>
+    <script src="~/dist/js/jquery.magnific-popup.js" asp-append-version="true"></script>
+    <script src="~/dist/js/jquery.slidey.js" asp-append-version="true"></script>
+    <script src="~/dist/js/move-top.js" asp-append-version="true"></script>
+    <script src="~/dist/js/owl.carousel.js" asp-append-version="true"></script>
+    <script src="~/dist/js/simplePlayer.js" asp-append-version="true"></script>
+    <script src="~/dist/js/custom.js" asp-append-version="true"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

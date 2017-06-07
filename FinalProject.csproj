@@ -1,0 +1,156 @@
+﻿<Project ToolsVersion="15.0" Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.0.0" />
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.0" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Files not to show in IDE -->
+    <None Remove="yarn.lock" />
+
+    <!-- Files not to publish (note that the 'dist' subfolders are re-added below) -->
+    <Content Remove="ClientApp\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="wwwroot\dist\css\contactstyle.css" />
+    <Content Include="wwwroot\dist\css\faqstyle.css" />
+    <Content Include="wwwroot\dist\css\flexslider.css" />
+    <Content Include="wwwroot\dist\css\font-awesome.min.css" />
+    <Content Include="wwwroot\dist\css\jquery.slidey.min.css" />
+    <Content Include="wwwroot\dist\css\medile.css" />
+    <Content Include="wwwroot\dist\css\news.css" />
+    <Content Include="wwwroot\dist\css\owl.carousel.css" />
+    <Content Include="wwwroot\dist\css\popuo-box.css" />
+    <Content Include="wwwroot\dist\css\single.css" />
+    <Content Include="wwwroot\dist\css\style.css" />
+    <Content Include="wwwroot\dist\fonts\fontawesome-webfont.eot" />
+    <Content Include="wwwroot\dist\fonts\fontawesome-webfont.svg" />
+    <Content Include="wwwroot\dist\fonts\fontawesome-webfont.ttf" />
+    <Content Include="wwwroot\dist\fonts\fontawesome-webfont.woff" />
+    <Content Include="wwwroot\dist\fonts\fontawesome-webfont.woff2" />
+    <Content Include="wwwroot\dist\fonts\FontAwesome.otf" />
+    <Content Include="wwwroot\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="wwwroot\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="wwwroot\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="wwwroot\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="wwwroot\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="wwwroot\dist\images\1.jpg" />
+    <Content Include="wwwroot\dist\images\1.png" />
+    <Content Include="wwwroot\dist\images\2.jpg" />
+    <Content Include="wwwroot\dist\images\3.jpg" />
+    <Content Include="wwwroot\dist\images\4.jpg" />
+    <Content Include="wwwroot\dist\images\5.jpg" />
+    <Content Include="wwwroot\dist\images\6.jpg" />
+    <Content Include="wwwroot\dist\images\7.jpg" />
+    <Content Include="wwwroot\dist\images\arrow.png" />
+    <Content Include="wwwroot\dist\images\arrow1.png" />
+    <Content Include="wwwroot\dist\images\c1.jpg" />
+    <Content Include="wwwroot\dist\images\c10.jpg" />
+    <Content Include="wwwroot\dist\images\c11.jpg" />
+    <Content Include="wwwroot\dist\images\c12.jpg" />
+    <Content Include="wwwroot\dist\images\c2.jpg" />
+    <Content Include="wwwroot\dist\images\c3.jpg" />
+    <Content Include="wwwroot\dist\images\c4.jpg" />
+    <Content Include="wwwroot\dist\images\c5.jpg" />
+    <Content Include="wwwroot\dist\images\c6.jpg" />
+    <Content Include="wwwroot\dist\images\c7.jpg" />
+    <Content Include="wwwroot\dist\images\c8.jpg" />
+    <Content Include="wwwroot\dist\images\c9.jpg" />
+    <Content Include="wwwroot\dist\images\h1-1.jpg" />
+    <Content Include="wwwroot\dist\images\h1.jpg" />
+    <Content Include="wwwroot\dist\images\h10.jpg" />
+    <Content Include="wwwroot\dist\images\h11.jpg" />
+    <Content Include="wwwroot\dist\images\h12.jpg" />
+    <Content Include="wwwroot\dist\images\h2-1.jpg" />
+    <Content Include="wwwroot\dist\images\h2.jpg" />
+    <Content Include="wwwroot\dist\images\h3-1.jpg" />
+    <Content Include="wwwroot\dist\images\h3.jpg" />
+    <Content Include="wwwroot\dist\images\h4.jpg" />
+    <Content Include="wwwroot\dist\images\h5.jpg" />
+    <Content Include="wwwroot\dist\images\h6.jpg" />
+    <Content Include="wwwroot\dist\images\h7.jpg" />
+    <Content Include="wwwroot\dist\images\h8.jpg" />
+    <Content Include="wwwroot\dist\images\h9.jpg" />
+    <Content Include="wwwroot\dist\images\img-sp.png" />
+    <Content Include="wwwroot\dist\images\m1.jpg" />
+    <Content Include="wwwroot\dist\images\m10.jpg" />
+    <Content Include="wwwroot\dist\images\m11.jpg" />
+    <Content Include="wwwroot\dist\images\m12.jpg" />
+    <Content Include="wwwroot\dist\images\m13.jpg" />
+    <Content Include="wwwroot\dist\images\m14.jpg" />
+    <Content Include="wwwroot\dist\images\m15.jpg" />
+    <Content Include="wwwroot\dist\images\m16.jpg" />
+    <Content Include="wwwroot\dist\images\m17.jpg" />
+    <Content Include="wwwroot\dist\images\m18.jpg" />
+    <Content Include="wwwroot\dist\images\m19.jpg" />
+    <Content Include="wwwroot\dist\images\m2.jpg" />
+    <Content Include="wwwroot\dist\images\m20.jpg" />
+    <Content Include="wwwroot\dist\images\m21.jpg" />
+    <Content Include="wwwroot\dist\images\m22.jpg" />
+    <Content Include="wwwroot\dist\images\m23.jpg" />
+    <Content Include="wwwroot\dist\images\m3.jpg" />
+    <Content Include="wwwroot\dist\images\m4.jpg" />
+    <Content Include="wwwroot\dist\images\m5.jpg" />
+    <Content Include="wwwroot\dist\images\m6.jpg" />
+    <Content Include="wwwroot\dist\images\m7.jpg" />
+    <Content Include="wwwroot\dist\images\m8.jpg" />
+    <Content Include="wwwroot\dist\images\m9.jpg" />
+    <Content Include="wwwroot\dist\images\n1.jpg" />
+    <Content Include="wwwroot\dist\images\n10.jpg" />
+    <Content Include="wwwroot\dist\images\n11.jpg" />
+    <Content Include="wwwroot\dist\images\n2.jpg" />
+    <Content Include="wwwroot\dist\images\n3.jpg" />
+    <Content Include="wwwroot\dist\images\n4.jpg" />
+    <Content Include="wwwroot\dist\images\n5.jpg" />
+    <Content Include="wwwroot\dist\images\n6.jpg" />
+    <Content Include="wwwroot\dist\images\n7.jpg" />
+    <Content Include="wwwroot\dist\images\n8.jpg" />
+    <Content Include="wwwroot\dist\images\n9.jpg" />
+    <Content Include="wwwroot\dist\images\new.gif" />
+    <Content Include="wwwroot\dist\images\new.png" />
+    <Content Include="wwwroot\dist\images\news1.jpg" />
+    <Content Include="wwwroot\dist\images\play-button.png" />
+    <Content Include="wwwroot\dist\images\user.jpg" />
+    <Content Include="wwwroot\dist\js\bootstrap.min.js" />
+    <Content Include="wwwroot\dist\js\custom.js" />
+    <Content Include="wwwroot\dist\js\easing.js" />
+    <Content Include="wwwroot\dist\js\jquery-2.1.4.min.js" />
+    <Content Include="wwwroot\dist\js\jquery.dotdotdot.min.js" />
+    <Content Include="wwwroot\dist\js\jquery.flexslider.js" />
+    <Content Include="wwwroot\dist\js\jquery.magnific-popup.js" />
+    <Content Include="wwwroot\dist\js\jquery.slidey.js" />
+    <Content Include="wwwroot\dist\js\move-top.js" />
+    <Content Include="wwwroot\dist\js\owl.carousel.js" />
+    <Content Include="wwwroot\dist\js\simplePlayer.js" />
+  </ItemGroup>
+  <Target Name="RunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec Command="npm install" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js --env.prod" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --env.prod" />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="wwwroot\dist\**; ClientApp\dist\**" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+</Project>
