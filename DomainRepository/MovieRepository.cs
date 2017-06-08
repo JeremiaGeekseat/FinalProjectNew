@@ -33,6 +33,16 @@ namespace FinalProject.DomainRepository
             return await _context.Movies.ToListAsync();
         }
 
+        public async Task<Category> GetMovieCategory(int id)
+        {
+            //var query = _context.Movies
+            //    .Join(_context.Categories, 
+            //    movie => movie.Category.Id,
+            //    category => category.Id,
+            //    (movie, category))
+            return await _context.Categories.SingleOrDefaultAsync(c => c.Id == id);
+        }
+
         public async Task<Rate> GetRate(int id)
         {
             return new Rate { Id = id, Rating = await _context.Reviews.Where(r => r.MovieId == id).AverageAsync(r => r.Rate) };

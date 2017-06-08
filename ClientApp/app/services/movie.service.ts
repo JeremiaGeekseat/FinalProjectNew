@@ -16,6 +16,13 @@ export class Rate {
 export class MovieService {
     constructor(private http: Http) { }
 
+    getMovie(value: number): Promise<Movie> {
+        return this.http.get('http://localhost:51402/api/Movies/GetMovie/' + value)
+            .toPromise()
+            .then(res => res.json() as Movie)
+            .catch(this.handleError);
+    }
+
     getMovies(value?: string): Promise<Movie[]> {
         return this.http.get('http://localhost:51402/api/Movies/GetMovies')
             .toPromise()
@@ -27,7 +34,6 @@ export class MovieService {
         return this.http.get('http://localhost:51402/api/Movies/GetMovieRate/' + value)
             .toPromise()
             .then(res => res.json() as Rate);
-        //return null;
     }
 
     private handleError(error: Response) {

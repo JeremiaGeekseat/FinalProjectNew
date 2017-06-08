@@ -32,6 +32,147 @@
     <Content Remove="ClientApp\**" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ClientApp\app\images\1.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\images\1.png">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\images\2.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\images\3.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\images\4.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\images\5.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\images\6.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\images\7.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\images\arrow.png" />
+    <Content Include="ClientApp\app\images\arrow1.png">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\images\b1.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\images\b10.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\images\b11.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\images\b12.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\images\b13.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\images\b2.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\images\b3.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\images\b5.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\images\b6.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\images\b7.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\images\b8.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\images\b9.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\images\c1.jpg" />
+    <Content Include="ClientApp\app\images\c10.jpg" />
+    <Content Include="ClientApp\app\images\c11.jpg" />
+    <Content Include="ClientApp\app\images\c12.jpg" />
+    <Content Include="ClientApp\app\images\c2.jpg" />
+    <Content Include="ClientApp\app\images\c3.jpg" />
+    <Content Include="ClientApp\app\images\c4.jpg" />
+    <Content Include="ClientApp\app\images\c5.jpg" />
+    <Content Include="ClientApp\app\images\c6.jpg" />
+    <Content Include="ClientApp\app\images\c7.jpg" />
+    <Content Include="ClientApp\app\images\c8.jpg" />
+    <Content Include="ClientApp\app\images\c9.jpg" />
+    <Content Include="ClientApp\app\images\h1-1.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\images\h1.jpg" />
+    <Content Include="ClientApp\app\images\h10.jpg" />
+    <Content Include="ClientApp\app\images\h11.jpg" />
+    <Content Include="ClientApp\app\images\h12.jpg" />
+    <Content Include="ClientApp\app\images\h2-1.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\images\h2.jpg" />
+    <Content Include="ClientApp\app\images\h3-1.jpg" />
+    <Content Include="ClientApp\app\images\h3.jpg" />
+    <Content Include="ClientApp\app\images\h4.jpg" />
+    <Content Include="ClientApp\app\images\h5.jpg" />
+    <Content Include="ClientApp\app\images\h6.jpg" />
+    <Content Include="ClientApp\app\images\h7.jpg" />
+    <Content Include="ClientApp\app\images\h8.jpg" />
+    <Content Include="ClientApp\app\images\h9.jpg" />
+    <Content Include="ClientApp\app\images\img-sp.png" />
+    <Content Include="ClientApp\app\images\m1.jpg" />
+    <Content Include="ClientApp\app\images\m10.jpg" />
+    <Content Include="ClientApp\app\images\m11.jpg" />
+    <Content Include="ClientApp\app\images\m12.jpg" />
+    <Content Include="ClientApp\app\images\m13.jpg" />
+    <Content Include="ClientApp\app\images\m14.jpg" />
+    <Content Include="ClientApp\app\images\m15.jpg" />
+    <Content Include="ClientApp\app\images\m16.jpg" />
+    <Content Include="ClientApp\app\images\m17.jpg" />
+    <Content Include="ClientApp\app\images\m18.jpg" />
+    <Content Include="ClientApp\app\images\m19.jpg" />
+    <Content Include="ClientApp\app\images\m2.jpg" />
+    <Content Include="ClientApp\app\images\m20.jpg" />
+    <Content Include="ClientApp\app\images\m21.jpg" />
+    <Content Include="ClientApp\app\images\m22.jpg" />
+    <Content Include="ClientApp\app\images\m23.jpg" />
+    <Content Include="ClientApp\app\images\m3.jpg" />
+    <Content Include="ClientApp\app\images\m4.jpg" />
+    <Content Include="ClientApp\app\images\m5.jpg" />
+    <Content Include="ClientApp\app\images\m6.jpg" />
+    <Content Include="ClientApp\app\images\m7.jpg" />
+    <Content Include="ClientApp\app\images\m8.jpg" />
+    <Content Include="ClientApp\app\images\m9.jpg" />
+    <Content Include="ClientApp\app\images\n1.jpg" />
+    <Content Include="ClientApp\app\images\n10.jpg" />
+    <Content Include="ClientApp\app\images\n11.jpg" />
+    <Content Include="ClientApp\app\images\n2.jpg" />
+    <Content Include="ClientApp\app\images\n3.jpg" />
+    <Content Include="ClientApp\app\images\n4.jpg" />
+    <Content Include="ClientApp\app\images\n5.jpg" />
+    <Content Include="ClientApp\app\images\n6.jpg" />
+    <Content Include="ClientApp\app\images\n7.jpg" />
+    <Content Include="ClientApp\app\images\n8.jpg" />
+    <Content Include="ClientApp\app\images\n9.jpg" />
+    <Content Include="ClientApp\app\images\new.gif" />
+    <Content Include="ClientApp\app\images\new.png" />
+    <Content Include="ClientApp\app\images\news1.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\images\play-button.png">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\app\images\user.jpg">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Include="wwwroot\dist\css\contactstyle.css" />
     <Content Include="wwwroot\dist\css\faqstyle.css" />
     <Content Include="wwwroot\dist\css\flexslider.css" />

@@ -16,11 +16,25 @@ namespace FinalProject.Controllers
             _repository = repository;
         }
 
+        // GET: Movie
+        [HttpGet]
+        public async Task<Movie> GetMovie(int id)
+        {
+            return await _repository.Get(id);
+        }
+
         // GET: Movies
         [HttpGet]
         public async Task<List<Movie>> GetMovies()
         {
             return await _repository.GetAll();
+        }
+
+        // GET: Movie Category
+        [HttpGet]
+        public async Task<Category> GetMovieCategory(int id)
+        {
+            return await _repository.GetMovieCategory(id);
         }
 
         // GET: Movie Rate

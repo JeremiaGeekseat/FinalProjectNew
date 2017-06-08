@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { Movie, MovieService } from '../../services/movie.service';
 
+import { Script } from '../../services/script.service';
 
 @Component({
     selector: 'home',
@@ -11,7 +12,7 @@ export class HomeComponent {
     errorMessage: string;
     movies: Movie[];
 
-    constructor(private movieService: MovieService) { }
+    constructor(private movieService: MovieService, private script: Script) { }
 
     getMovies(value?: string) {
         this.movieService.getMovies(value).then(res => {
@@ -26,7 +27,6 @@ export class HomeComponent {
 
     getRate() {
         for (let movie of this.movies) {
-            console.log(movie);
             this.movieService.getMovieRate(movie.id).then(res => {
                 movie.rate = res.rating
             });
@@ -46,5 +46,10 @@ export class HomeComponent {
         return star;
     }
 
-    ngOnInit() { this.getMovies(); }
+    ngOnInit() {
+        this.getMovies();
+        //this.script.load('jquery', 'bootstrap', 'easing', 'dotdotdot', 'flexslider', 'magnific', 'slidey', 'move', 'carousel', 'simplePlayer', 'custom').then(data => {
+        //    console.log('script loaded ', data);
+        //}).catch(error => console.log(error));
+    }
 }
