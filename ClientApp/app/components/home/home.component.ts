@@ -15,7 +15,6 @@ export class HomeComponent {
 
     getMovies(value?: string) {
         this.movieService.getMovies(value).then(res => {
-            debugger;
             this.movies = res;
             this.getRate();
         })
