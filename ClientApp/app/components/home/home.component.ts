@@ -15,7 +15,9 @@ export class HomeComponent {
 
     getMovies(value?: string) {
         this.movieService.getMovies(value).then(res => {
+            debugger;
             this.movies = res;
+            this.getRate();
         })
     }
 
@@ -23,11 +25,27 @@ export class HomeComponent {
         return "../../dist/images/" + val;
     }
 
-    //getRate(value?: string) {
-    //    this.movieService.getMovieRate(value).then(res => {
-    //        this.rates = res;
-    //    })
-    //}
+    getRate() {
+        for (let movie of this.movies) {
+            console.log(movie);
+            this.movieService.getMovieRate(movie.id).then(res => {
+                movie.rate = res.rating
+            });
+        }
+    }
+
+    getStar(val: number) {
+        let star: string;
+        star = "";
+        for (let i = 1; i <= 5; i++) {
+            if (i <= val) {
+                star = star + '<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li> ';
+            } else {
+                star = star + '<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li> ';
+            }
+        }
+        return star;
+    }
 
     ngOnInit() { this.getMovies(); }
 }

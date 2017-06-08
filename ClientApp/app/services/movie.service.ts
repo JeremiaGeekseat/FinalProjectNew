@@ -5,12 +5,12 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
 export class Movie {
-    constructor(public Id: number, public CreatedDate: Date, public ModifiedDate: Date, public IsDeleted: boolean, public Title: string, public Description: string, public Viewed: number, public Released: Date, public ThumbnailUrl: string, public BackgroundUrl: string, public Category: number, public Rate: number) { }
+    constructor(public id: number, public createdDate: Date, public modifiedDate: Date, public isDeleted: boolean, public title: string, public description: string, public viewed: number, public released: Date, public thumbnailUrl: string, public backgroundUrl: string, public category: number, public rate: number) { }
 }
 
-//export class Rate {
-//    constructor(public Id: number, public Rating: number) { }
-//}
+export class Rate {
+    constructor(public id: number, public rating: number) { }
+}
 
 @Injectable()
 export class MovieService {
@@ -22,13 +22,13 @@ export class MovieService {
             .then(res => res.json() as Movie[])
             .catch(this.handleError);
     }
-    
-    //getMovieRate(value: string): Promise<Rate> {
-    //    return this.http.get('http://localhost:51402/api/Movies/GetMovieRate/' + value)
-    //        .toPromise()
-    //        .then(res => res.json() as Rate)
-    //        .catch(this.handleError);
-    //}
+
+    getMovieRate(value: number): Promise<Rate> {
+        return this.http.get('http://localhost:51402/api/Movies/GetMovieRate/' + value)
+            .toPromise()
+            .then(res => res.json() as Rate);
+        //return null;
+    }
 
     private handleError(error: Response) {
         console.error(error);
