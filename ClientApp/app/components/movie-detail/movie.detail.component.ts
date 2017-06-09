@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 
-import { Movie, MovieService } from '../../services/movie.service';
-
+import { Movie } from '../../data/movie';
+import { Category } from '../../data/category';
+import { MovieService } from '../../services/movie.service';
 
 @Component({
     selector: 'movie-detail',
@@ -13,15 +14,23 @@ export class MovieDetailComponent {
     movies: Movie[];
     id: number;
     selectedMovie: Movie;
+    category: Category;
     isLoading: boolean;
 
     constructor(private movieService: MovieService, private route: ActivatedRoute) { }
+
+    getCategory(value: number) {
+        this.movieService.getMovieCategory(value).then(res => {
+            this.category = res;
+        })
+    }
 
     getMovie(value: number) {
         this.isLoading = true;
         this.movieService.getMovie(value).then(res => {
             this.selectedMovie = res;
             this.getRate();
+            this.getCategory(res.id);
             this.isLoading = false;
         })
     }

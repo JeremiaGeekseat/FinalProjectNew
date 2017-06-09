@@ -29,7 +29,7 @@
                             <a href="#">Detail</a>
                             <div class="agile-info-wthree-box">
                                 <div class="col-md-12">
-                                    <!--<div class="col-md-4">Category</div><div class="col-md-8"></div>-->
+                                    <div class="col-md-4" *ngIf="category">Category</div><div class="col-md-8" *ngIf="category">{{category.name}}</div>
                                     <br><div class="col-md-4">About</div><div class="col-md-8">{{selectedMovie.description}}</div>
                                     <br><div class="col-md-4">Viewed</div><div class="col-md-8">{{selectedMovie.viewed}}</div>
                                     <br><div class="col-md-4">Released</div><div class="col-md-8">{{selectedMovie.released | date:'dd MMMM yyyy'}}</div>

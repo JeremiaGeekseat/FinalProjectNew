@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
-import { Movie, MovieService } from '../../services/movie.service';
+import { Movie } from '../../data/movie';
+import { MovieService } from '../../services/movie.service';
 
 import { Script } from '../../services/script.service';
 
@@ -13,7 +14,7 @@ export class HomeComponent {
     movies: Movie[];
 
     constructor(private movieService: MovieService, private script: Script) { }
-
+    
     getMovies(value?: string) {
         this.movieService.getMovies(value).then(res => {
             this.movies = res;

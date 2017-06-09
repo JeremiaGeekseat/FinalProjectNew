@@ -99,7 +99,7 @@ namespace FinalProject.Migrations
 
                     b.Property<string>("BackgroundUrl");
 
-                    b.Property<int?>("CategoryId");
+                    b.Property<int>("CategoryId");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("date");
@@ -211,7 +211,8 @@ namespace FinalProject.Migrations
                 {
                     b.HasOne("FinalProject.DomainData.Category", "Category")
                         .WithMany("Movies")
-                        .HasForeignKey("CategoryId");
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("FinalProject.DomainData.Review", b =>

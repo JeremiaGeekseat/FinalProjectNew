@@ -35,12 +35,7 @@ namespace FinalProject.DomainRepository
 
         public async Task<Category> GetMovieCategory(int id)
         {
-            //var query = _context.Movies
-            //    .Join(_context.Categories, 
-            //    movie => movie.Category.Id,
-            //    category => category.Id,
-            //    (movie, category))
-            return await _context.Categories.SingleOrDefaultAsync(c => c.Id == id);
+            return await _context.Movies.Select(m => m.Category).FirstOrDefaultAsync(c => c.Id == id);
         }
 
         public async Task<Rate> GetRate(int id)

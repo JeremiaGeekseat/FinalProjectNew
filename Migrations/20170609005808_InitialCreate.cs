@@ -53,7 +53,7 @@ namespace FinalProject.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     BackgroundUrl = table.Column<string>(nullable: true),
-                    CategoryId = table.Column<int>(nullable: true),
+                    CategoryId = table.Column<int>(nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "date", nullable: false),
                     Description = table.Column<string>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
@@ -71,7 +71,7 @@ namespace FinalProject.Migrations
                         column: x => x.CategoryId,
                         principalTable: "Category",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(

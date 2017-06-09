@@ -4,13 +4,9 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
-export class Movie {
-    constructor(public id: number, public createdDate: Date, public modifiedDate: Date, public isDeleted: boolean, public title: string, public description: string, public viewed: number, public released: Date, public thumbnailUrl: string, public backgroundUrl: string, public category: number, public rate: number) { }
-}
-
-export class Rate {
-    constructor(public id: number, public rating: number) { }
-}
+import { Category } from '../data/category';
+import { Rate } from '../data/rate';
+import { Movie } from '../data/movie';
 
 @Injectable()
 export class MovieService {
@@ -28,6 +24,12 @@ export class MovieService {
             .toPromise()
             .then(res => res.json() as Movie[])
             .catch(this.handleError);
+    }
+
+    getMovieCategory(value: number): Promise<Category> {
+        return this.http.get('http://localhost:51402/api/Movies/GetMovieCategory/' + value)
+            .toPromise()
+            .then(res => res.json() as Category);
     }
 
     getMovieRate(value: number): Promise<Rate> {

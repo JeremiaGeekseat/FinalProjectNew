@@ -8,6 +8,8 @@ namespace FinalProject.DomainData
     [Table("Contact")]
     public class Contact : BaseEntity
     {
+        [ForeignKey("User")]
+        public int? UserId { get; set; }
         public string Email { get; set; }
         public string Name { get; set; }
         public string Phone { get; set; }

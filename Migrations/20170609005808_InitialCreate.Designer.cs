@@ -8,7 +8,7 @@ using FinalProject.DomainData;
 namespace FinalProject.Migrations
 {
     [DbContext(typeof(FinalProjectContext))]
-    [Migration("20170607030423_InitialCreate")]
+    [Migration("20170609005808_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -100,7 +100,7 @@ namespace FinalProject.Migrations
 
                     b.Property<string>("BackgroundUrl");
 
-                    b.Property<int?>("CategoryId");
+                    b.Property<int>("CategoryId");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("date");
@@ -212,7 +212,8 @@ namespace FinalProject.Migrations
                 {
                     b.HasOne("FinalProject.DomainData.Category", "Category")
                         .WithMany("Movies")
-                        .HasForeignKey("CategoryId");
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("FinalProject.DomainData.Review", b =>

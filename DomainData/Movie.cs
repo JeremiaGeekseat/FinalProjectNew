@@ -13,6 +13,8 @@ namespace FinalProject.DomainData
 
         }
 
+        [ForeignKey("Category")]
+        public int CategoryId { get; set; }
         public string Title { get; set; }
         public int Viewed { get; set; }
         [Column(TypeName = "date")]
