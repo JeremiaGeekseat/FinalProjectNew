@@ -26,6 +26,13 @@ export class MovieService {
             .catch(this.handleError);
     }
 
+    getMoviesByCategory(value: number): Promise<Movie[]> {
+        return this.http.get('http://localhost:51402/api/Movies/GetMoviesByCategory' + value)
+            .toPromise()
+            .then(res => res.json() as Movie[])
+            .catch(this.handleError);
+    }
+
     getMovieCategory(value: number): Promise<Category> {
         return this.http.get('http://localhost:51402/api/Movies/GetMovieCategory/' + value)
             .toPromise()

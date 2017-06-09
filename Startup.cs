@@ -34,6 +34,7 @@ namespace FinalProject
             services.AddDbContext<FinalProjectContext>(options => options.UseSqlServer(Configuration.GetConnectionString("FinalProjectContext")));
             services.AddScoped<IMovieRepository, MovieRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

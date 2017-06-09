@@ -10,5 +10,6 @@ namespace FinalProject.DomainRepository
     {
         Task<Rate> GetRate(int id);
         Task<Category> GetMovieCategory(int id);
+        Task<List<Movie>> GetMoviesByCategory(int id);
     }
 }
