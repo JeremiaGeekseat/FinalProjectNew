@@ -16,11 +16,13 @@ namespace FinalProject.DomainRepository
             _context = context;
         }
 
-        public async void Delete(Category entity)
+        public async Task<Category> Delete(Category entity)
         {
-            var user = await _context.Categories.SingleOrDefaultAsync(u => u.Id == entity.Id);
-            _context.Categories.Remove(user);
+            entity.IsDeleted = true;
+            entity.ModifiedDate = DateTime.Now;
+            _context.Update(entity);
             await _context.SaveChangesAsync();
+            return entity;
         }
 
         public async Task<Category> Get(int id)
@@ -30,19 +32,24 @@ namespace FinalProject.DomainRepository
 
         public async Task<List<Category>> GetAll()
         {
-            return await _context.Categories.ToListAsync();
+            return await _context.Categories.Where(c => !c.IsDeleted).ToListAsync();
         }
 
-        public async void Insert(Category entity)
+        public async Task<Category> Insert(Category entity)
         {
+            entity.CreatedDate = DateTime.Now;
+            entity.ModifiedDate = DateTime.Now;
             _context.Add(entity);
             await _context.SaveChangesAsync();
+            return entity;
         }
 
-        public async void Update(Category entity)
+        public async Task<Category> Update(Category entity)
         {
+            entity.ModifiedDate = DateTime.Now;
             _context.Update(entity);
             await _context.SaveChangesAsync();
+            return entity;
         }
     }
 }

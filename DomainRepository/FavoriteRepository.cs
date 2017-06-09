@@ -16,11 +16,13 @@ namespace FinalProject.DomainRepository
             _context = context;
         }
 
-        public async void Delete(Favorite entity)
+        public async Task<Favorite> Delete(Favorite entity)
         {
-            var user = await _context.Favorites.SingleOrDefaultAsync(u => u.Id == entity.Id);
-            _context.Favorites.Remove(user);
+            entity.IsDeleted = true;
+            entity.ModifiedDate = DateTime.Now;
+            _context.Update(entity);
             await _context.SaveChangesAsync();
+            return entity;
         }
 
         public async Task<Favorite> Get(int id)
@@ -30,19 +32,24 @@ namespace FinalProject.DomainRepository
 
         public async Task<List<Favorite>> GetAll()
         {
-            return await _context.Favorites.ToListAsync();
+            return await _context.Favorites.Where(f => !f.IsDeleted).ToListAsync();
         }
 
-        public async void Insert(Favorite entity)
+        public async Task<Favorite> Insert(Favorite entity)
         {
+            entity.CreatedDate = DateTime.Now;
+            entity.ModifiedDate = DateTime.Now;
             _context.Add(entity);
             await _context.SaveChangesAsync();
+            return entity;
         }
 
-        public async void Update(Favorite entity)
+        public async Task<Favorite> Update(Favorite entity)
         {
+            entity.ModifiedDate = DateTime.Now;
             _context.Update(entity);
             await _context.SaveChangesAsync();
+            return entity;
         }
     }
 }

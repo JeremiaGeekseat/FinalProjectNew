@@ -16,11 +16,13 @@ namespace FinalProject.DomainRepository
             _context = context;
         }
 
-        public async void Delete(Contact entity)
+        public async Task<Contact> Delete(Contact entity)
         {
-            var user = await _context.Contacts.SingleOrDefaultAsync(u => u.Id == entity.Id);
-            _context.Contacts.Remove(user);
+            entity.IsDeleted = true;
+            entity.ModifiedDate = DateTime.Now;
+            _context.Update(entity);
             await _context.SaveChangesAsync();
+            return entity;
         }
 
         public async Task<Contact> Get(int id)
@@ -30,19 +32,24 @@ namespace FinalProject.DomainRepository
 
         public async Task<List<Contact>> GetAll()
         {
-            return await _context.Contacts.ToListAsync();
+            return await _context.Contacts.Where(c => !c.IsDeleted).ToListAsync();
         }
 
-        public async void Insert(Contact entity)
+        public async Task<Contact> Insert(Contact entity)
         {
+            entity.CreatedDate = DateTime.Now;
+            entity.ModifiedDate = DateTime.Now;
             _context.Add(entity);
             await _context.SaveChangesAsync();
+            return entity;
         }
 
-        public async void Update(Contact entity)
+        public async Task<Contact> Update(Contact entity)
         {
+            entity.ModifiedDate = DateTime.Now;
             _context.Update(entity);
             await _context.SaveChangesAsync();
+            return entity;
         }
     }
 }

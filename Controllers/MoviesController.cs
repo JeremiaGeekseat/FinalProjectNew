@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace FinalProject.Controllers
 {
-    //[Route("api/movie")]
     public class MoviesController : Controller
     {
         private readonly IMovieRepository _repository;

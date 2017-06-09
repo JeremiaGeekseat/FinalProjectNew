@@ -16,11 +16,13 @@ namespace FinalProject.DomainRepository
             _context = context;
         }
 
-        public async void Delete(User entity)
+        public async Task<User> Delete(User entity)
         {
-            var user = await _context.Users.SingleOrDefaultAsync(u => u.Id == entity.Id);
-            _context.Users.Remove(user);
+            entity.IsDeleted = true;
+            entity.ModifiedDate = DateTime.Now;
+            _context.Update(entity);
             await _context.SaveChangesAsync();
+            return entity;
         }
 
         public async Task<User> Get(int id)
@@ -30,7 +32,7 @@ namespace FinalProject.DomainRepository
 
         public async Task<List<User>> GetAll()
         {
-            return await _context.Users.ToListAsync();
+            return await _context.Users.Where(u => !u.IsDeleted).ToListAsync();
         }
 
         public async Task<User> GetUserByEmail(string email)
@@ -38,16 +40,21 @@ namespace FinalProject.DomainRepository
             return await _context.Users.SingleOrDefaultAsync(u => u.Email == email);
         }
 
-        public async void Insert(User entity)
+        public async Task<User> Insert(User entity)
         {
+            entity.CreatedDate = DateTime.Now;
+            entity.ModifiedDate = DateTime.Now;
             _context.Add(entity);
             await _context.SaveChangesAsync();
+            return entity;
         }
 
-        public async void Update(User entity)
+        public async Task<User> Update(User entity)
         {
+            entity.ModifiedDate = DateTime.Now;
             _context.Update(entity);
             await _context.SaveChangesAsync();
+            return entity;
         }
     }
 }

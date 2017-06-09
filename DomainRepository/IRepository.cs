@@ -10,8 +10,8 @@ namespace FinalProject.DomainRepository
     {
         Task<List<T>> GetAll();
         Task<T> Get(int id);
-        void Insert(T entity);
-        void Update(T entity);
-        void Delete(T entity);
+        Task<T> Insert(T entity);
+        Task<T> Update(T entity);
+        Task<T> Delete(T entity);
     }
 }

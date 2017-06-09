@@ -16,11 +16,13 @@ namespace FinalProject.DomainRepository
             _context = context;
         }
 
-        public async void Delete(Movie entity)
+        public async Task<Movie> Delete(Movie entity)
         {
-            var user = await _context.Movies.SingleOrDefaultAsync(u => u.Id == entity.Id);
-            _context.Movies.Remove(user);
+            entity.IsDeleted = true;
+            entity.ModifiedDate = DateTime.Now;
+            _context.Update(entity);
             await _context.SaveChangesAsync();
+            return entity;
         }
 
         public async Task<Movie> Get(int id)
@@ -30,7 +32,7 @@ namespace FinalProject.DomainRepository
 
         public async Task<List<Movie>> GetAll()
         {
-            return await _context.Movies.ToListAsync();
+            return await _context.Movies.Where(m => !m.IsDeleted).ToListAsync();
         }
 
         public async Task<Category> GetMovieCategory(int id)
@@ -43,16 +45,21 @@ namespace FinalProject.DomainRepository
             return new Rate { Id = id, Rating = await _context.Reviews.Where(r => r.MovieId == id).AverageAsync(r => r.Rate) };
         }
 
-        public async void Insert(Movie entity)
+        public async Task<Movie> Insert(Movie entity)
         {
+            entity.CreatedDate = DateTime.Now;
+            entity.ModifiedDate = DateTime.Now;
             _context.Add(entity);
             await _context.SaveChangesAsync();
+            return entity;
         }
 
-        public async void Update(Movie entity)
+        public async Task<Movie> Update(Movie entity)
         {
+            entity.ModifiedDate = DateTime.Now;
             _context.Update(entity);
             await _context.SaveChangesAsync();
+            return entity;
         }
     }
 }
